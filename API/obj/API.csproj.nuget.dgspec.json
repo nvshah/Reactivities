@@ -105,8 +105,8 @@
               "C:\\Users\\Nipun Shah\\DotnetProjects\\dotnetudemy\\Reactivities\\Domain\\Domain.csproj": {
                 "projectPath": "C:\\Users\\Nipun Shah\\DotnetProjects\\dotnetudemy\\Reactivities\\Domain\\Domain.csproj"
               },
-              "C:\\Users\\Nipun Shah\\DotnetProjects\\dotnetudemy\\Reactivities\\Persistence\\Persistence.csproj": {
-                "projectPath": "C:\\Users\\Nipun Shah\\DotnetProjects\\dotnetudemy\\Reactivities\\Persistence\\Persistence.csproj"
+              "c:\\Users\\Nipun Shah\\DotnetProjects\\dotnetudemy\\Reactivities\\Persistence\\Persistence.csproj": {
+                "projectPath": "c:\\Users\\Nipun Shah\\DotnetProjects\\dotnetudemy\\Reactivities\\Persistence\\Persistence.csproj"
               }
             }
           }
@@ -193,14 +193,14 @@
         }
       }
     },
-    "C:\\Users\\Nipun Shah\\DotnetProjects\\dotnetudemy\\Reactivities\\Persistence\\Persistence.csproj": {
+    "c:\\Users\\Nipun Shah\\DotnetProjects\\dotnetudemy\\Reactivities\\Persistence\\Persistence.csproj": {
       "version": "1.0.0",
       "restore": {
-        "projectUniqueName": "C:\\Users\\Nipun Shah\\DotnetProjects\\dotnetudemy\\Reactivities\\Persistence\\Persistence.csproj",
+        "projectUniqueName": "c:\\Users\\Nipun Shah\\DotnetProjects\\dotnetudemy\\Reactivities\\Persistence\\Persistence.csproj",
         "projectName": "Persistence",
-        "projectPath": "C:\\Users\\Nipun Shah\\DotnetProjects\\dotnetudemy\\Reactivities\\Persistence\\Persistence.csproj",
+        "projectPath": "c:\\Users\\Nipun Shah\\DotnetProjects\\dotnetudemy\\Reactivities\\Persistence\\Persistence.csproj",
         "packagesPath": "C:\\Users\\Nipun Shah\\.nuget\\packages\\",
-        "outputPath": "C:\\Users\\Nipun Shah\\DotnetProjects\\dotnetudemy\\Reactivities\\Persistence\\obj\\",
+        "outputPath": "c:\\Users\\Nipun Shah\\DotnetProjects\\dotnetudemy\\Reactivities\\Persistence\\obj\\",
         "projectStyle": "PackageReference",
         "configFilePaths": [
           "C:\\Users\\Nipun Shah\\AppData\\Roaming\\NuGet\\NuGet.Config"
