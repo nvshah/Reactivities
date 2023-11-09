@@ -1,1 +1,9 @@
 .vscode/*
+API/bin/
+API/obj/
+Domain/bin/
+Domain/obj/
+Persistence/bin/
+Persistence/obj/
+Application/bin/
+Application/obj/
