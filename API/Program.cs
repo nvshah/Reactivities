@@ -11,7 +11,8 @@ builder.Services.AddControllers();
 builder.Services.AddEndpointsApiExplorer();
 builder.Services.AddSwaggerGen();
 builder.Services.AddDbContext<DataContext>(options => 
-{
+{   
+    // Connect to a database (Sqlite)
     options.UseSqlite(builder.Configuration.GetConnectionString("DefaultConnection"));
 });
 
