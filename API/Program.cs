@@ -50,7 +50,9 @@ try
     // Try creating DB (corresp to migration)
     var context = services.GetRequiredService<DataContext>();
     // Effectively below is doing same as command `dotnet ef database update`
-    context.Database.Migrate();
+    await context.Database.MigrateAsync();
+    // Add Seed Data
+    await Seed.SeedData(context);
 }
 catch (Exception ex)
 {   
