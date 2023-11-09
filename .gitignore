@@ -7,3 +7,5 @@ Persistence/bin/
 Persistence/obj/
 Application/bin/
 Application/obj/
+
+API/reactivities.db
