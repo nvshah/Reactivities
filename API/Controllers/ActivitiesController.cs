@@ -8,6 +8,8 @@ namespace API.Controllers
     public class ActivitiesController: BaseApiController
     {
         private readonly DataContext _context;
+
+        // DI to inject DataContext in controller class
         public ActivitiesController(DataContext context)
         {
             _context = context;
@@ -19,7 +21,7 @@ namespace API.Controllers
             return await _context.Activities.ToListAsync();
         }
 
-        [HttpGet]  // api/activities/abcdcbssbs
+        [HttpGet("{id}")]  // api/activities/{id}
         public async Task<ActionResult<Activity>> GetActivity(Guid id)
         {
             return await _context.Activities.FindAsync(id);
