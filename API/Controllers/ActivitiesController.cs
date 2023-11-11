@@ -19,7 +19,7 @@ namespace API.Controllers
             return await Mediator.Send(new Details.Query{Id = id});
         }
 
-        [HttpPost]  // api/activities/{id}
+        [HttpPost]  // api/activities
         public async Task<IActionResult> CreateActivity(Activity activity)
         {
             // NoTE: CreateActivity will get Activity obj as a param & APIController will help it to deduce this
@@ -34,6 +34,14 @@ namespace API.Controllers
             activity.Id = id;
             // NoTE: CreateActivity will get Activity obj as a param & APIController will help it to deduce this
             await Mediator.Send( new Edit.Command{ Activity = activity } );
+            return Ok();
+        }
+
+        [HttpDelete("{id}")]  // api/activities/{id}
+        public async Task<IActionResult> DeleteActivity(Guid id)
+        {
+            // NoTE: CreateActivity will get Activity obj as a param & APIController will help it to deduce this
+            await Mediator.Send( new Delete.Command{ Id = id });
             return Ok();
         }
 
