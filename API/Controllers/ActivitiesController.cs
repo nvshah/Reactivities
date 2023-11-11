@@ -27,5 +27,15 @@ namespace API.Controllers
             return Ok();
         }
 
+        [HttpPut("{id}")]  // api/activities/{id}
+        public async Task<IActionResult> UpdateActivity(Guid id, Activity activity)
+        {
+            // As {activity} is meant to hold edited value & not real-entity residing in DB
+            activity.Id = id;
+            // NoTE: CreateActivity will get Activity obj as a param & APIController will help it to deduce this
+            await Mediator.Send( new Edit.Command{ Activity = activity } );
+            return Ok();
+        }
+
     }
 }
