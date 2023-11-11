@@ -1,37 +1,13 @@
-using Application.Activities;
-using Application.Core;
+using API.Extensions;
 using Microsoft.EntityFrameworkCore;
 using Persistence;
 
 var builder = WebApplication.CreateBuilder(args);
 
 // Add services to the container. (ie DI)
-
 // All these services under builder are scoped to it (ie Used for incoming HTTP requests)
 builder.Services.AddControllers();
-// Learn more about configuring Swagger/OpenAPI at https://aka.ms/aspnetcore/swashbuckle
-builder.Services.AddEndpointsApiExplorer();
-builder.Services.AddSwaggerGen();
-builder.Services.AddDbContext<DataContext>(options => 
-{   
-    // Connect to a database (Sqlite)
-    options.UseSqlite(builder.Configuration.GetConnectionString("DefaultConnection"));
-});
-// Add CORS Service for CORS policy
-builder.Services.AddCors(opt => {
-    opt.AddPolicy("CorsPolicy", policy => 
-    {   
-        // ByPass CORS policy for your client-app (wherever its hosted)
-        policy.AllowAnyHeader().AllowAnyMethod().WithOrigins("http://localhost:3000");
-    });
-});
-// Register MediatR service & handler for query
-builder.Services.AddMediatR(config => 
-    config.RegisterServicesFromAssembly(typeof(List.Handler).Assembly));
-//builder.Services.AddMediatR(typeof(List.Handler));
-
-// Register AutoMapper as a Service (So that they can be used while needed in Application proj)
-builder.Services.AddAutoMapper(typeof(MappingProfiles).Assembly);
+builder.Services.AddApplicationSerices(builder.Configuration);
 
 var app = builder.Build();
 
