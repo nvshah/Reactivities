@@ -15,6 +15,14 @@ builder.Services.AddDbContext<DataContext>(options =>
     // Connect to a database (Sqlite)
     options.UseSqlite(builder.Configuration.GetConnectionString("DefaultConnection"));
 });
+// Add CORS Service for CORS policy
+builder.Services.AddCors(opt => {
+    opt.AddPolicy("CorsPolicy", policy => 
+    {   
+        // ByPass CORS policy for your client-app (wherever its hosted)
+        policy.AllowAnyHeader().AllowAnyMethod().WithOrigins("http://localhost:3000");
+    });
+});
 
 var app = builder.Build();
 
@@ -24,6 +32,9 @@ if (app.Environment.IsDevelopment())
     app.UseSwagger();
     app.UseSwaggerUI();
 }
+
+// Middleware for CORS-policy [NOTE: it should be placed before UseAuthorization() ie order matters]
+app.UseCors("CorsPolicy");
 
 //app.UseHttpsRedirection();
 
