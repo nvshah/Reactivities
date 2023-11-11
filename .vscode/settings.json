@@ -1,0 +1,20 @@
+{
+    "workbench.colorTheme": "Tokyo Storm Gogh",
+    //"editor.fontFamily": "Dank Mono, Operator Mono Lig, Lotion, MonoLisa,  JetBrains Mono, Fira Code iScript, Fira Code, Menlo, Monaco, 'Courier New', monospace",
+    //"editor.fontFamily": "Operator Mono Book Italic, Fira Code, Consolas, 'Courier New', monospace",
+    "editor.fontFamily": "Operator Mono, MonoLisa Regular, Consolas, 'Courier New', monospace",
+    "editor.fontSize": 16,
+    "editor.semanticHighlighting.enabled": true,
+    "editor.fontLigatures": true,
+    "editor.acceptSuggestionOnEnter": "on",
+    "files.exclude": {
+        "**/.git": true,
+        "**/.svn": true,
+        "**/.hg": true,
+        "**/CVS": true,
+        "**/.DS_Store": true,
+        "**/Thumbs.db": true, 
+        "**/bin": true, 
+        "**/obj": true,
+    }
+}
