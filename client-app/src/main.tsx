@@ -1,8 +1,8 @@
 import React from 'react'
 import ReactDOM from 'react-dom/client'
-import App from './app/App.tsx'
+import App from './app/layout/App.tsx'
 import 'semantic-ui-css/semantic.min.css'
-import './app/styles.css'
+import './app/layout/styles.css'
 
 // main.tsx (created via VIte) = index.tsx (if created via react-app)
 
