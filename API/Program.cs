@@ -7,7 +7,7 @@ var builder = WebApplication.CreateBuilder(args);
 // Add services to the container. (ie DI)
 // All these services under builder are scoped to it (ie Used for incoming HTTP requests)
 builder.Services.AddControllers();
-builder.Services.AddApplicationSerices(builder.Configuration);
+builder.Services.AddApplicationServices(builder.Configuration);
 
 var app = builder.Build();
 

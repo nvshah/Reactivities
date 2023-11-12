@@ -10,7 +10,7 @@ namespace API.Extensions
         /// <summary>
         /// <param name="config"></param> this will give access to AppSettings.json or whatever config we set for project
         /// <returns></returns>
-        public static IServiceCollection AddApplicationSerices(this IServiceCollection services, IConfiguration config)
+        public static IServiceCollection AddApplicationServices(this IServiceCollection services, IConfiguration config)
         {
             // Learn more about configuring Swagger/OpenAPI at https://aka.ms/aspnetcore/swashbuckle
             services.AddEndpointsApiExplorer();
