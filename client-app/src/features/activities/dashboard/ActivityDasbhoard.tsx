@@ -5,18 +5,28 @@ import ActivityDetails from "../details/ActivityDetails";
 import ActivityForm from "../form/ActivityForm";
 
 interface Props{
-    activities: Activity[]
+    activities: Activity[];
+    selectedActivity: Activity|undefined;
+    selectActivity: (id: string) => void;
+    cancelSelectedActivity: () => void;
+
 }
 
-export default function ActivityDashboard({activities}: Props){
+export default function ActivityDashboard({activities, selectedActivity, selectActivity, cancelSelectedActivity}: Props){
     return (
         <Grid>
             <Grid.Column width='10'>
-                <ActivityList activities={activities} />
+                <ActivityList 
+                    activities={activities}
+                    selectActivity={selectActivity}
+                    />
             </Grid.Column>
             <Grid.Column width='6'>
-                {activities[0] && 
-                <ActivityDetails activity={activities[0]} />}
+                {selectedActivity && 
+                <ActivityDetails 
+                    activity={selectedActivity} 
+                    cancelSelectedActivity={cancelSelectedActivity} 
+                    />}
                 <ActivityForm />
             </Grid.Column>
         </Grid>
