@@ -6,6 +6,7 @@ import { Activity } from '../models/activity';
 import NavBar from './NavBar';
 import ActivityDashboard from '../../features/activities/dashboard/ActivityDasbhoard';
 import agent from '../api/agent';
+import LoadingComponent from './LoadingComponent';
 
 function delay(ms: number) {
   return new Promise( resolve => setTimeout(resolve, ms) );
@@ -15,11 +16,18 @@ function App() {
   const [activities, setActivities] = useState<Activity[]>([]);
   const [selectedActivity, setSelectedActivity] = useState<Activity | undefined>(undefined);
   const [editMode, setEditMode] = useState(false);
+  const [loading, setLoading] = useState(true);
 
   useEffect(() => {
     // console.log('Request Fired')
     agent.Activities.list().then(response => {
+      let activities: Activity[] = [];
+      response.forEach((a) => {
+        a.date = a.date.split('T')[0];
+        activities.push()
+      })
       setActivities(response)
+      setLoading(false);
     })
 
     // //! Mocked Activities
@@ -59,6 +67,8 @@ function App() {
   function handleDeleteActivity(id: string){
     setActivities([...activities.filter(x => x.id !== id)]);
   }
+
+  if (loading) return <LoadingComponent content='Loading app...' />
 
 
   return (
