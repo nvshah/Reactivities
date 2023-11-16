@@ -1,11 +1,11 @@
 import { useEffect, useState } from 'react'
-import axios from 'axios';
 import { Container } from 'semantic-ui-react';
 import {v4 as uuid} from 'uuid';
 
 import { Activity } from '../models/activity';
 import NavBar from './NavBar';
 import ActivityDashboard from '../../features/activities/dashboard/ActivityDasbhoard';
+import agent from '../api/agent';
 
 function delay(ms: number) {
   return new Promise( resolve => setTimeout(resolve, ms) );
@@ -18,16 +18,16 @@ function App() {
 
   useEffect(() => {
     // console.log('Request Fired')
-    // axios.get<Activity[]>('http://localhost:5000/api/activities')
-    // .then(response => {
-    //   setActivities(response.data)
-    // })
-    //! Mocked Activities
-    delay(2000).then(
-        () => setActivities([{id:'1', category: 'drinks', city: 'ahmedabad', date: '', description: 'Desc', title: 'Event1', venue:'Kankaria'}, 
-        {id:'2', category: 'drinks', city: 'ahmedabad', date: '', description: 'Desc', title: 'Event2', venue:'Iscon'}, 
-      ])
-    );
+    agent.Activities.list().then(response => {
+      setActivities(response)
+    })
+
+    // //! Mocked Activities
+    // delay(2000).then(
+    //     () => setActivities([{id:'1', category: 'drinks', city: 'ahmedabad', date: '', description: 'Desc', title: 'Event1', venue:'Kankaria'}, 
+    //     {id:'2', category: 'drinks', city: 'ahmedabad', date: '', description: 'Desc', title: 'Event2', venue:'Iscon'}, 
+    //   ])
+    // );
   }, []);
 
   function handleSelectActivity(id: string){
