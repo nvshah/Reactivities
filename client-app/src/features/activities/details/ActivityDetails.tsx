@@ -1,14 +1,14 @@
 import React from "react"
-import { Button, Card, Image } from "semantic-ui-react"
-import { Activity } from "../../../app/models/activity"
+import { Button, Card, Container, Image } from "semantic-ui-react"
+import { useStore } from "../../../app/stores/store";
 
-interface Props{
-    activity: Activity;
-    cancelSelectedActivity: () => void;
-    openForm: (id: string) => void;
-}
+export default function ActivityDetails(){
+    const {activityStore} = useStore(); 
+    const {selectedActivity: activity, openForm, cancelSelectedActivity} = activityStore;
 
-export default function ActivityDetails({activity, cancelSelectedActivity, openForm}: Props){
+    if (!activity) return <Container />; 
+    //const activity = selectedActivity!
+
     return (
         // fluid will take avaialble width
         <Card fluid>  
